@@ -10,12 +10,12 @@ build-ts:
 	npm run build
 		
 .PHONY: test-go
-test:
+test-go:
 # -timeout 10m
 	go test -v ./...
 
 .PHONY: test-ts
-test:
+test-ts:
 	npm test
 
 .PHONY: test

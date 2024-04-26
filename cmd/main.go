@@ -1,7 +1,7 @@
 package main
 
-import "net/http"
+import fileserver "github.com/njayp/icarus/pkg/file_server"
 
 func main() {
-	http.ListenAndServe(":8080", http.FileServer(http.Dir("files")))
+	fileserver.Start()
 }
