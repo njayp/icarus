@@ -37,3 +37,23 @@ helm:
 .PHONY: uhelm
 uhelm: 
 	helm uninstall icarus
+
+.PHONY: secret
+secret:
+	kubectl create secret generic tunnel-credentials --from-file=credentials.json=${HOME}/.cloudflared/${CLOUDFLARE_TUNNEL_ID}.json
+
+.PHONY: image-file_server
+image-file_server:
+	docker build -t njpowell/file_server -f ./docker/file_server/Dockerfile .
+
+.PHONY: image-blog
+image-blog:
+	docker build -t njpowell/blog -f ./docker/blog/Dockerfile .
+
+.PHONY: images
+images: image-blog image-file_server
+
+.PHONY: push-images
+push-images: images
+	docker push njpowell/file_server
+	docker push njpowell/blog

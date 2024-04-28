@@ -2,6 +2,12 @@
 ## Deployment Configuration
 ################################################################################
 
-image:
-  registry: jmalloc
-  name: echo-server
+file_server:
+  image:
+    registry: njpowell
+    name: file_server
+
+blog:
+  image:
+    registry: njpowell
+    name: blog
