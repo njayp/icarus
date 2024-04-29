@@ -2,10 +2,10 @@
 ## Deployment Configuration
 ################################################################################
 
-file_server:
+files:
   image:
     registry: njpowell
-    name: file_server
+    name: files
 
 blog:
   image:

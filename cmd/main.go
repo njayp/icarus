@@ -1,7 +1,9 @@
 package main
 
-import fileserver "github.com/njayp/icarus/pkg/file_server"
+import (
+	"github.com/njayp/icarus/pkg/files"
+)
 
 func main() {
-	fileserver.Start()
+	files.Start()
 }

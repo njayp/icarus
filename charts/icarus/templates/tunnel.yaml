@@ -89,7 +89,7 @@ data:
     # E.g. `cloudflared tunnel route dns example-tunnel tunnel.example.com`.
     ingress:
     - hostname: files.njayp.net
-      service: http://file-server
+      service: http://files
     - hostname: blog.njayp.net
       service: http://blog
     # This rule matches any traffic which didn't match a previous rule, and responds with HTTP 404.
