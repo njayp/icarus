@@ -26,6 +26,10 @@ spec:
       labels:
         app: files-label  
     spec:
+      volumes:
+        - name: task-pv-storage
+          persistentVolumeClaim:
+            claimName: task-pv-claim
       containers:
         - name: files-container
           image: {{ .Values.files.image.registry }}/{{ .Values.files.image.name }}
@@ -36,3 +40,18 @@ spec:
             limits:
               cpu: 50m
               memory: 128Mi
+          volumeMounts:
+            - mountPath: "/files/mnt"
+              name: task-pv-storage
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-pv-claim
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 35Gi
