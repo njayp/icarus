@@ -48,4 +48,4 @@ dist-ssr
 
 output
 files
-!/*/files
+!/***/files
