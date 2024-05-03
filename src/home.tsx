@@ -1,26 +1,35 @@
-import { Paper } from "@mui/material";
+import { Card, CardContent, CardHeader, Stack, Typography } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import { Link } from "react-router-dom";
 
-const DemoPaper = styled(Paper)(({ theme }) => ({
-    width: 120,
-    height: 120,
+const random = () => Math.floor(Math.random() * 205) + 50;
+
+const StyledCard = styled(Card)(({ theme }) => ({
+    width: 200,
+    height: 200,
+    margin: theme.spacing(2),
     padding: theme.spacing(2),
-    ...theme.typography.body2,
-    textAlign: 'center',
+    backgroundColor: `rgb(${random()}, ${random()}, ${random()})`,
 }));
 
 // TODO get this automatically from files
-const pages: { path: string }[] = [
+const pages: { path: string, text: string, title: string }[] = [
     {
-        path: "testo"
-    }
+        title: "GRPC Header Propigation in Rust",
+        text: "Use Tower and Tonic to Propigate Headers from Request to Response and from Call to Call.",
+        path: "grpc-header-propigation-rust"
+    },
 ]
 
 export function HomePage() {
-    return <>
-        {pages.map((page) => {
-            return <Link to={`post/${page.path}`}><DemoPaper>{page.path}</DemoPaper></Link>
-        })}
-    </>
+    return <Stack direction="row" flexWrap="wrap">
+        {pages.map((page) => <Link to={`post/${page.path}`}>
+            <StyledCard elevation={3} className="card">
+                <CardHeader subheader={page.title} />
+                <CardContent>
+                    <Typography variant="body2">{page.text}</Typography>
+                </CardContent>
+            </StyledCard>
+        </Link>)}
+    </Stack>
 }

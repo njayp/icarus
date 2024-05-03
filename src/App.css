@@ -6,3 +6,13 @@
 .logo:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+
+.card:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.post {
+  text-align: left;
+  margin-left: 2em;
+  margin-right: 2em;
+}

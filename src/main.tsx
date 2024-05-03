@@ -5,6 +5,7 @@ import './index.css'
 import {
   createBrowserRouter,
   RouterProvider,
+  //RouteObject
 } from "react-router-dom";
 import ErrorPage from './error.tsx';
 import { HomePage } from './home.tsx';
@@ -37,9 +38,8 @@ const router = createBrowserRouter([
     // errorElement: <ErrorPage />,
     children: [
       {
-        // catches errors while routing child paths
+        // loads errorElement in <App />'s <Outlet />
         errorElement: <ErrorPage />,
-        // all routes are child routes
         children: [
           {
             index: true,
@@ -51,6 +51,7 @@ const router = createBrowserRouter([
             element: <PostPage />,
           },
           {
+            // all unspecified routes
             path: "*",
             loader: async () => { throw fourOhFour }
           },

@@ -1,4 +1,4 @@
-<svg viewBox="0 0 240 70" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 180 70" xmlns="http://www.w3.org/2000/svg">
   <style>
     .small {
       font: italic 13px sans-serif;
@@ -16,6 +16,6 @@
     }
   </style>
 
-  <text x="20" y="25" class="heavy">Nick's</text>
-  <text x="40" y="55" class="Rrrrr">Blog</text>
+  <text x="80" y="25" class="heavy">Nick's</text>
+  <text x="100" y="55" class="Rrrrr">Blog</text>
 </svg>
