@@ -17,7 +17,7 @@ export function HomePage() {
     return <Stack direction="row" flexWrap="wrap">
         {posts.map((page) => <Link to={`post/${page.path}`}>
             <StyledCard elevation={3} className="card">
-                <CardHeader subheader={page.title} />
+                <CardHeader subheader={page.title} sx={{ height: 50 }} />
                 <CardContent>
                     <Typography variant="body2">{page.blurb}</Typography>
                 </CardContent>
