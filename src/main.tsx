@@ -10,6 +10,7 @@ import {
 import ErrorPage from './error.tsx';
 import { HomePage } from './home.tsx';
 import { PostPage } from './post.tsx';
+import { posts } from './posts.ts';
 
 
 const fourOhFour = new Response("", {
@@ -18,11 +19,13 @@ const fourOhFour = new Response("", {
 });
 
 async function loader(data: any) {
-  //const contact = await getContact(params.contactId);
-  // return params provided by route
-  const resp = await fetch(`/${data.params.path}.md`)
-  const text = await resp.text()
+  const post = posts.find((post) => post.path === data.params.path)
+  if (!post) {
+    throw fourOhFour
+  }
 
+  const resp = await fetch(post.url)
+  const text = await resp.text()
   if (text.startsWith("<!doctype html>")) {
     throw fourOhFour
   }
@@ -34,8 +37,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    // App should never throw router err
-    // errorElement: <ErrorPage />,
+    // App should never throw err
     children: [
       {
         // loads errorElement in <App />'s <Outlet />
@@ -51,7 +53,7 @@ const router = createBrowserRouter([
             element: <PostPage />,
           },
           {
-            // all unspecified routes
+            // throw 404 for all unspecified routes
             path: "*",
             loader: async () => { throw fourOhFour }
           },
