@@ -6,11 +6,11 @@ I finally found the time to make a website. Let's go through its creation.
 
 ### Hosting
 
-Oracle OKE. It's managed. It's easy. It's FREE. [This](https://me.mattscott.cloud/kubernetes-on-oracle-cloud-for-free/) is a good tutorial.
+Oracle OKE. It's managed, it's easy, it's FREE. This is a good [guide](https://me.mattscott.cloud/kubernetes-on-oracle-cloud-for-free/).
 
 ### Ingress
 
-Cloudflare Tunnel. It's managed. It's easy. It's FREE. Follow [this](https://developers.cloudflare.com/cloudflare-one/tutorials/many-cfd-one-tunnel/). Purchase your domain name through Cloudflare for easy integration.
+Instead of a traditional ingress, I decided to use Cloudflare Tunnel, as Cloudflare would shield my site from common internet woes, and make my hosting cheaper. Also, it's managed, it's easy, it's FREE. This is a good [tutorial](https://developers.cloudflare.com/cloudflare-one/tutorials/many-cfd-one-tunnel/). I purchased my domain name through Cloudflare for easy integration.
 
 ### Routing
 
@@ -49,4 +49,4 @@ const router = createBrowserRouter([
 ```
 
 ### Markdown Highlighting
-[This](https://hannadrehman.com/blog/enhancing-your-react-markdown-experience-with-syntax-highlighting) blog post was truly a pleasure to find and utilize. I can only hope to be so helpful.
+This [blog post](https://hannadrehman.com/blog/enhancing-your-react-markdown-experience-with-syntax-highlighting) was truly a pleasure to find and utilize. I can only hope to be so helpful.
