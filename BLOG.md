@@ -10,7 +10,7 @@ Oracle OKE. It's managed, it's easy, it's FREE. This is a good [guide](https://m
 
 ### Ingress
 
-Instead of a traditional ingress, I decided to use Cloudflare Tunnel, as Cloudflare would shield my site from common internet woes, and make my hosting cheaper. Also, it's managed, it's easy, it's FREE. This is a good [tutorial](https://developers.cloudflare.com/cloudflare-one/tutorials/many-cfd-one-tunnel/). I purchased my domain name through Cloudflare for easy integration.
+Instead of a traditional ingress, I decided to use Cloudflare Tunnel, as Cloudflare shields against common internet woes. It also removes the burden of a dedicated IP address. Also, it's managed, it's easy, it's FREE. This is a good [tutorial](https://developers.cloudflare.com/cloudflare-one/tutorials/many-cfd-one-tunnel/). I purchased my domain name through Cloudflare for easy integration.
 
 ### Routing
 
