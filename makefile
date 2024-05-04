@@ -50,11 +50,11 @@ image-blog:
 images: image-blog image-files
 
 .PHONY: push-files
-push-files:
+push-files: image-files
 	docker push ${FILES_IMAGE}
 
 .PHONY: push-blog
-push-blog:
+push-blog: image-blog
 	docker push ${BLOG_IMAGE}
 
 .PHONY: push-images

@@ -10,7 +10,7 @@ type post = {
 export const posts: post[] = [
     {
         title: "This Blog",
-        blurb: "How I Created My Own Website",
+        blurb: "Hosting, Ingress, and Other Choices",
         path: "this-blog",
         url: "https://raw.githubusercontent.com/njayp/icarus/main/BLOG.md",
     },
