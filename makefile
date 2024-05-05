@@ -28,7 +28,7 @@ helm:
 
 .PHONY: uhelm
 uhelm: 
-	helm uninstall icarus
+	helm upgrade icarus ./charts/icarus
 
 .PHONY: secret
 secret:

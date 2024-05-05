@@ -10,7 +10,7 @@ export default function ErrorPage() {
             <p>
                 <i>{error.status && `${error.status}: `}{error.statusText || error.message}</i>
             </p>
-            <img src={"/src/assets/fof.png"} alt="404 dragon" />
+            <img src={"/fof.png"} alt="404 dragon" />
         </div>
     );
 }
