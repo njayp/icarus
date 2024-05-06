@@ -1,5 +1,5 @@
 .PHONY: gen
-gen: gen-go gen-ts
+gen: gen-go gen-ts gen-helm
 
 .PHONY: gen-ts
 gen-ts:
@@ -22,17 +22,28 @@ run: gen-go
 start: gen-ts
 	npm run dev
 
+.PHONY: gen-helm
+gen-helm:
+	helm dependency update ./charts/icarus
+	helm dependency build ./charts/icarus
+
 .PHONY: helm
-helm: 
+helm: gen-helm
 	helm install icarus ./charts/icarus
 
 .PHONY: uhelm
-uhelm: 
+uhelm: gen-helm
 	helm upgrade icarus ./charts/icarus
 
 .PHONY: secret
 secret:
 	kubectl create secret generic tunnel-credentials --from-file=credentials.json=${HOME}/.cloudflared/${CLOUDFLARE_TUNNEL_ID}.json
+
+# gets grafana password
+# username is admin
+.PHONY: password
+password:
+	kubectl get secret --namespace default icarus-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 
 REGISTRY=njpowell
 BLOG_IMAGE=${REGISTRY}/blog

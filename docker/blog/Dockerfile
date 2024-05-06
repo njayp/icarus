@@ -5,6 +5,6 @@ RUN npm i
 RUN npm run build
 
 FROM node:alpine
-COPY --from=build /app/dist /dist
 RUN npm install -g serve
-ENTRYPOINT ["serve", "-s", "-l", "8080", "dist"]
+COPY --from=build /app/dist /dist
+ENTRYPOINT ["serve", "-s", "-l", "8080", "/dist"]

@@ -50,3 +50,24 @@ const router = createBrowserRouter([
 
 ### Markdown Highlighting
 This [blog post](https://hannadrehman.com/blog/enhancing-your-react-markdown-experience-with-syntax-highlighting) was truly a pleasure to find and utilize. I can only hope to be so helpful.
+
+### Prometheus and Grafana
+It was simple to include both as helm dependencies. Below is the `Chart.yaml` for this app. 
+
+```yaml
+apiVersion: v2
+name: icarus
+type: application
+version: "0.0.1"
+dependencies:
+  # https://github.com/prometheus-community/helm-charts/blob/main/charts/prometheus/README.md
+  - name: prometheus
+    version: "^25"
+    repository: https://prometheus-community.github.io/helm-charts
+  # https://github.com/grafana/helm-charts/blob/main/charts/grafana/README.md
+  - name: grafana
+    version: "^7"
+    repository: https://grafana.github.io/helm-charts
+```
+
+Then I added a `ServiceMonitor` for my cloudflare tunnel, and imported this [dashboard](https://grafana.com/grafana/dashboards/17457-cloudflare-tunnels-cloudflared/) into grafana

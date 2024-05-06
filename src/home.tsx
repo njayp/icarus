@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import { Link } from "react-router-dom";
 import { posts } from "./posts";
 
-const random = () => Math.floor(Math.random() * 205) + 50;
+const random = () => Math.floor(Math.random() * 150) + 105;
 
 const StyledCard = styled(Card)(({ theme }) => ({
     width: 200,

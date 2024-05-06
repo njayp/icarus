@@ -1,6 +1,13 @@
 apiVersion: v2
 name: icarus
-description: A Helm chart for icarus.
 type: application
 version: "0.0.1"
-#icon: 
+dependencies:
+  # https://github.com/prometheus-community/helm-charts/blob/main/charts/prometheus/README.md
+  - name: prometheus
+    version: "^25"
+    repository: https://prometheus-community.github.io/helm-charts
+  # https://github.com/grafana/helm-charts/blob/main/charts/grafana/README.md
+  - name: grafana
+    version: "^7"
+    repository: https://grafana.github.io/helm-charts
