@@ -70,4 +70,4 @@ dependencies:
     repository: https://grafana.github.io/helm-charts
 ```
 
-Then I added a `ServiceMonitor` for my cloudflare tunnel, and imported this [dashboard](https://grafana.com/grafana/dashboards/17457-cloudflare-tunnels-cloudflared/) into grafana
+Then I added a `ServiceMonitor` for my cloudflare tunnel, and imported this [dashboard](https://grafana.com/grafana/dashboards/17457-cloudflare-tunnels-cloudflared/) into grafana.
