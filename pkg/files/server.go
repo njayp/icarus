@@ -7,7 +7,7 @@ import (
 	"github.com/njayp/icarus/pkg/config"
 )
 
-func Start() {
+func Start() error {
 	url := fmt.Sprintf("%s:%v", config.Env.FileServerAddr, config.Env.FileServerPort)
-	http.ListenAndServe(url, http.FileServer(http.Dir(config.Env.FileServerDir)))
+	return http.ListenAndServe(url, http.FileServer(http.Dir(config.Env.FileServerDir)))
 }

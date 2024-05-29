@@ -13,9 +13,9 @@ spec:
         app: files-label  
     spec:
       volumes:
-        - name: task-pv-storage
+        - name: files-storage
           persistentVolumeClaim:
-            claimName: task-pv-claim
+            claimName: files-pv-claim
       containers:
         - name: files-container
           image: {{ .Values.files.image.registry }}/{{ .Values.files.image.name }}
@@ -24,4 +24,4 @@ spec:
               name: http
           volumeMounts:
             - mountPath: "/files/mnt"
-              name: task-pv-storage
+              name: files-storage

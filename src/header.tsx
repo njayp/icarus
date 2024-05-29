@@ -16,9 +16,7 @@ export function Header() {
             <Link to="/">
                 <Button>Home</Button>
             </Link>
-            <Button href={`${domain}${path}`}>Grafana</Button>
-            <Button href="/resume.pdf">Résumé</Button>
-            <Button href="https://github.com/njayp">GitHub</Button>
+            <Button href={`${domain}${path}`}>Metrics</Button>
         </ButtonGroup>
     </Stack >
 }
